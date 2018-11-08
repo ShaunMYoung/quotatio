@@ -1,0 +1,53 @@
+* {
+  font-family: sans-serif;
+  color: white;
+  outline: none;
+}
+
+body {
+  background: #37373f;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 150px;
+  margin-bottom: 70px;
+  letter-spacing: 2px;
+}
+
+#quoteContainer {
+  width: 65vw;
+  margin: 0 auto;
+}
+
+#quote {
+  font-size: 24px;
+}
+
+#author {
+  font-size: 26px;
+  font-weight: normal;
+  text-align: right;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 70px;
+  background: #47b;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 12px;
+  box-shadow: 0 8px 5px -2px rgba(0,0,0,0.5);
+  transition: 0.1s ease;
+}
+
+button:hover {
+  background: #36a;
+}
+
+button:active {
+  transform: scale(0.98);
+}

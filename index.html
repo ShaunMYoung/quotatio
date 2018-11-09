@@ -13,7 +13,7 @@
       <h3 id="author">The quote's author will appear here</h3>
     </div>
 
-    <button id="newQuoteButton">Generate new quote</button>
+    <button id="newQuoteButton" onclick = "generatequote()" >Generate new quote</button>
 
 
     <!-- all javascript code will go within the below script tag -->
@@ -31,7 +31,17 @@
         7. Add a button to tweet the current quote
       */
 
-      const quotes = [
+
+function generatequote ()
+{
+var quoterng = (Math.floor ( Math.random () * quotes.length ));
+
+var randomquote = quotes[quoterng];
+  
+  console.log(randomquote)
+
+};
+     const quotes = [
         {
           text: "I will build a great, great wall on our southern border, and I will have Mexico pay for that wall. Mark my words.",
           author: 'Donald Trump'
@@ -40,7 +50,14 @@
           text: "If you're walking down the right path and you're willing to keep walking, eventually you'll make progress.",
           author: "Barack Obama"
         }
+        
       ];
+
+window.onload = generatequote;
+      
+        
+        
+
 
     </script>
 

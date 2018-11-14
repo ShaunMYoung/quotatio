@@ -6,19 +6,14 @@
 
 body {
   background: #37373f;
-}
-
-h1 {
-  text-align: center;
-  font-size: 36px;
-  margin-top: 150px;
-  margin-bottom: 70px;
-  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
 }
 
 #quoteContainer {
   width: 65vw;
   margin: 0 auto;
+  margin-top: 50px;
 }
 
 #quote {
@@ -51,4 +46,19 @@ button:hover {
 
 button:active {
   transform: scale(0.98);
+}
+
+#header {
+  background: #003663;
+  width: 100%;
+  height: auto;
+  margin: 0 auto
+  padding: 0;
+  border-bottom: 2px solid white;
+}
+
+#logo {
+  width: 330px;
+  display: block;
+  margin: 0 auto;
 }

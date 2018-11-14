@@ -9,5 +9,4 @@ A random quote generator
 5. Integrate an online API for random quotes
 
 ## Extra Credit
-- Add a button that selects a random quote from the current quote's author
 - Add a button to tweet the current quote

@@ -1,7 +1,7 @@
 * {
-  font-family: sans-serif;
   color: white;
   outline: none;
+
 }
 
 body {
@@ -17,11 +17,13 @@ body {
 }
 
 #quote {
-  font-size: 24px;
+  font-size: 36px;
+  font-family: 'Caveat', cursive;
 }
 
 #author {
-  font-size: 26px;
+  font-family: 'Satisfy', cursive;
+  font-size: 40px;
   font-weight: normal;
   text-align: right;
 }
@@ -38,6 +40,7 @@ button {
   box-shadow: 0 8px 5px -2px rgba(0,0,0,0.5);
   transition: 0.1s ease;
   cursor: pointer;
+  font-family: sans-serif;
 }
 
 button:hover {
@@ -50,8 +53,8 @@ button:active {
 
 #header {
   background: #003663;
-  width: 1920px;
-  height: 400px;
+  width: 100%;
+  height: auto;
   margin: 0 auto
   padding: 0;
   border-bottom: 2px solid white;

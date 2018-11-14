@@ -7,4 +7,4 @@ A random quote generator
 3. When the button is clicked, a random quote is displayed appropriately on the screen
 4. A random quote is display on refresh (without the user clicking the button)
 5. Add a button to tweet the current quote
-6. Integrate an online API for random quotes
+6. Integrate the Forismatic API for random quotes

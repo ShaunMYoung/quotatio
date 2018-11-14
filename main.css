@@ -50,8 +50,8 @@ button:active {
 
 #header {
   background: #003663;
-  width: 1920px;
-  height: 400px;
+  width: 100%;
+  height: auto;
   margin: 0 auto
   padding: 0;
   border-bottom: 2px solid white;

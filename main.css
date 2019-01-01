@@ -39,7 +39,7 @@ button {
   font-weight: bold;
   padding: 8px 12px;
   box-shadow: 0 8px 5px -2px rgba(0,0,0,0.5);
-  transition: 0.1s ease;
+  transition: 0.01s ease;
   cursor: pointer;
   font-family: sans-serif;
 }
@@ -49,7 +49,7 @@ button:hover {
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(1.0);
 }
 
 #header {

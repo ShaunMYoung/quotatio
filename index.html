@@ -40,31 +40,26 @@
       */
 
 
-function generatequote ()
-{
-var quoterng = (Math.floor ( Math.random () * quotes.length ));
-
-var randomquote = quotes[quoterng];
-  
-  console.log(randomquote)
-  
-  document.getElementById("quote").innerHTML = randomquote.text.toString();
-  
-  document.getElementById("author").innerHTML = "-" + randomquote.author.toString();
-
+function generatequote () {
+  fetch(`https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&key=${ generateRandomNumber() }&format=json&lang=en`)
+    .then(res => res.json())
+    .then(data => setText(data))
+    // this might cause an infinite loop if an error other than a quote specific syntax error occurs
+    .catch(err => generateQuote());
 };
-     const quotes = [
-        {
-          text: "The tragedy of life is often not in our failure, but rather in our complacency; not in our doing too much, but rather in our doing too little; not in our living above our ability, but rather in our living below our capacities.",
-          author: 'Benjamin E. Mays'
-        },
-        {
-          text: "If you're walking down the right path and you're willing to keep walking, eventually you'll make progress.",
-          author: 'Barack Obama'
-        }
-        
-      ];
 
+function generateRandomNumber() {
+  return Math.floor(Math.random() * 100000)
+    };
+
+function setText(quote) {
+  document.getElementById("quote").innerHTML = quote.quoteText;
+  if (quote.quoteAuthor === '') {
+    document.getElementById("author").innerHTML = 'Unknown author';
+  } else {
+    document.getElementById("author").innerHTML = '-' + quote.quoteAuthor;
+  }
+};
 
 window.onload = generatequote;
       

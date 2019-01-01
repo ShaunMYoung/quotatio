@@ -17,11 +17,14 @@
       <span id="quote" >A quote will appear here</span>
       <h3 id="author">The quote's author will appear here</h3>
     </div>
-
+    
     <button id="newQuoteButton" onclick = "generatequote()" >Generate new quote</button>
-
-
-    <!-- all javascript code will go within the below script tag -->
+    <div id=SocialContainer>
+      <a id="twitter" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"charset="utf-8"></script>
+    </a>
+    <iframe id=FB src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FQuotatioapp&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="98" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+  </div>
+      <!-- all javascript code will go within the below script tag -->
     <script type="text/javascript">
 
       /* DIRECTIONS
@@ -52,8 +55,8 @@ var randomquote = quotes[quoterng];
 };
      const quotes = [
         {
-          text: "I will build a great, great wall on our southern border, and I will have Mexico pay for that wall. Mark my words.",
-          author: 'Donald Trump'
+          text: "The tragedy of life is often not in our failure, but rather in our complacency; not in our doing too much, but rather in our doing too little; not in our living above our ability, but rather in our living below our capacities.",
+          author: 'Benjamin E. Mays'
         },
         {
           text: "If you're walking down the right path and you're willing to keep walking, eventually you'll make progress.",

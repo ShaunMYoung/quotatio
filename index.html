@@ -38,7 +38,7 @@
         6. Add a button that selects a random quote from the current quote's author
         7. Add a button to tweet the current quote
       */
-
+var timer;
 
 function generatequote () {
   fetch(`https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&key=${ generateRandomNumber() }&format=json&lang=en`)
@@ -50,6 +50,9 @@ function generatequote () {
 
 function generateRandomNumber() {
   return Math.floor(Math.random() * 100000)
+        setTimeout(generatequote, 400);
+        timer = setTimeout(generatequote, 400);
+    clearTimeout(timer);
     };
 
 function setText(quote) {

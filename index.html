@@ -40,7 +40,7 @@ function generateRandomNumber() {
 };
 
 function setText(quote) {
-  document.getElementById("quote").innerHTML = quote.quoteText.replace(';', ':');
+  document.getElementById("quote").innerHTML = quote.quoteText.replace(';', ' ~');
   if (quote.quoteAuthor === '') {
     document.getElementById("author").innerHTML = 'Unknown author';
   } else {

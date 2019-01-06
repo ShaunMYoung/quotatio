@@ -11,7 +11,7 @@ body {
 }
 
 #quoteContainer {
-  width: 65vw;
+  width: 55vw;
   margin: 0 auto;
   margin-top: 30px;
   min-height: 170px
@@ -68,7 +68,7 @@ button:active {
 
 #SocialContainer {
   display: inline;
-  padding-left: 22vw;
+  padding-left: 14vw;
   position: sticky;
   max-height: 20px;
 }

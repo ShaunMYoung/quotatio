@@ -11,14 +11,10 @@ body {
 }
 
 #quoteContainer {
-<<<<<<< HEAD
-  width: 60vw;
-=======
-  width: 55vw;
->>>>>>> f59cefcb1525ee737cf2d28beb4e1b5b4728c315
+  width: 62vw;
   margin: 0 auto;
   margin-top: 30px;
-  min-height: 180px
+  min-height: 225px
 }
 
 #quote {
@@ -72,7 +68,15 @@ button:active {
 
 #SocialContainer {
   display: inline;
-  padding-left: 22vw;
+  padding-left: 19vw;
   position: sticky;
   max-height: 20px;
+}
+
+#tweet {
+  cursor: pointer;
+}
+
+#share {
+  cursor: pointer;
 }

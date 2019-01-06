@@ -14,8 +14,8 @@
     </div>
 
     <div id="quoteContainer">
-      <span id="quote" >A quote will appear here</span>
-      <h3 id="author">The quote's author will appear here</h3>
+      <span id="quote" >Loading...</span>
+      <h3 id="author"></h3>
     </div>
     
     <button id="newQuoteButton" onclick = "generatequote()" >Generate new quote</button>
@@ -26,6 +26,8 @@
   </div>
       <!-- all javascript code will go within the below script tag -->
     <script type="text/javascript">
+var timer;
+
 
       /* DIRECTIONS
         1. Create a list of quotes containing the quote and the author
@@ -48,7 +50,10 @@ function generatequote () {
 };
 
 function generateRandomNumber() {
-  return Math.floor(Math.random() * 100000)
+  return Math.floor(Math.random() * 1000)
+      setTimeout(generatequote, 400);
+        timer = setTimeout(generatequote, 400);
+    clearTimeout(timer);
     };
 
 function setText(quote) {
@@ -58,11 +63,12 @@ function setText(quote) {
   } else {
     document.getElementById("author").innerHTML = '-' + quote.quoteAuthor;
   }
+
 };
 
 window.onload = generatequote;
+
       
-        
         
 
 

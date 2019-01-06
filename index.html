@@ -14,58 +14,48 @@
     </div>
 
     <div id="quoteContainer">
-      <span id="quote" >A quote will appear here</span>
-      <h3 id="author">The quote's author will appear here</h3>
+      <span id="quote" >Loading...</span>
+      <h3 id="author"></h3>
     </div>
-
+    
     <button id="newQuoteButton" onclick = "generatequote()" >Generate new quote</button>
-
-
-    <!-- all javascript code will go within the below script tag -->
+    <div id=SocialContainer>
+      <a id="twitter" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"charset="utf-8"></script>
+    </a>
+    <iframe id=FB src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FQuotatioapp&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="98" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+  </div>
+      <!-- all javascript code will go within the below script tag -->
     <script type="text/javascript">
+var timer;
 
-      /* DIRECTIONS
-        1. Create a list of quotes containing the quote and the author
-        2. When the button is clicked, select a random quote and log it the console
-        3. When the button is clicked, a random quote is displayed appropriately on the screen
-        4. A random quote is display on refresh (without the user clicking the button)
-        5. Integrate an online API for random quotes
+  function generatequote () {
+  fetch(`https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&key=${ generateRandomNumber() }&format=json&lang=en`)
+    .then(res => res.json())
+    .then(data => setText(data))
+    // this might cause an infinite loop if an error other than a quote specific syntax error occurs
+    .catch(err => generateQuote());
+};
 
-        EXTRA CREDIT:
-        6. Add a button that selects a random quote from the current quote's author
-        7. Add a button to tweet the current quote
-      */
+function generateRandomNumber() {
+  return Math.floor(Math.random() * 1000)
+      setTimeout(generatequote, 400);
+        timer = setTimeout(generatequote, 400);
+    clearTimeout(timer);
+    };
 
-
-function generatequote ()
-{
-var quoterng = (Math.floor ( Math.random () * quotes.length ));
-
-var randomquote = quotes[quoterng];
-  
-  console.log(randomquote)
-  
-  document.getElementById("quote").innerHTML = randomquote.text.toString();
-  
-  document.getElementById("author").innerHTML = "-" + randomquote.author.toString();
+function setText(quote) {
+  document.getElementById("quote").innerHTML = quote.quoteText;
+  if (quote.quoteAuthor === '') {
+    document.getElementById("author").innerHTML = 'Unknown author';
+  } else {
+    document.getElementById("author").innerHTML = '-' + quote.quoteAuthor;
+  }
 
 };
-     const quotes = [
-        {
-          text: "I will build a great, great wall on our southern border, and I will have Mexico pay for that wall. Mark my words.",
-          author: 'Donald Trump'
-        },
-        {
-          text: "If you're walking down the right path and you're willing to keep walking, eventually you'll make progress.",
-          author: "Barack Obama"
-        }
-        
-      ];
-
 
 window.onload = generatequote;
+
       
-        
         
 
 

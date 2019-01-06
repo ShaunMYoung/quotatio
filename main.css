@@ -11,7 +11,11 @@ body {
 }
 
 #quoteContainer {
+<<<<<<< HEAD
   width: 60vw;
+=======
+  width: 55vw;
+>>>>>>> f59cefcb1525ee737cf2d28beb4e1b5b4728c315
   margin: 0 auto;
   margin-top: 30px;
   min-height: 180px

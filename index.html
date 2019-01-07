@@ -50,7 +50,7 @@
     .then(res => res.json())
     .then(data => setText(data))
     // this might cause an infinite loop if an error other than a quote specific syntax error occurs
-    .catch(err => generateQuote());
+    .catch(err => generatequote());
 };
 
 function generateRandomNumber() {

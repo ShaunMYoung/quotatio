@@ -72,3 +72,11 @@ button:active {
   position: sticky;
   max-height: 20px;
 }
+
+#tweet {
+  cursor: pointer;
+}
+
+#share {
+  cursor: pointer;
+}

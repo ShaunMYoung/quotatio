@@ -4,7 +4,25 @@
     <title>Quotatio</title>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="C:/Users/Shaun/quotatio/Favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="C:/Users/Shaun/quotatio/Favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="C:/Users/Shaun/quotatio/Favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="C:/Users/Shaun/quotatio/Favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="C:/Users/Shaun/quotatio/Favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="C:/Users/Shaun/quotatio/Favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="C:/Users/Shaun/quotatio/Favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="C:/Users/Shaun/quotatio/Favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="C:/Users/Shaun/quotatio/Favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="C:/Users/Shaun/quotatio/Favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="C:/Users/Shaun/quotatio/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="C:/Users/Shaun/quotatio/Favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="C:/Users/Shaun/quotatio/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="quotatio/Favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="eULqnje38St3pNd_ZSlMcpvnGKTu0FDYX2InVLxSQCs" />  
   </head>
 
   <body>
@@ -20,9 +38,9 @@
     
     <button id="newQuoteButton" onclick = "generatequote()" >Generate new quote</button>
     <div id=SocialContainer>
-      <a id="twitter" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js"charset="utf-8"></script>
-    </a>
-    <iframe id=FB src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FQuotatioapp&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="98" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      <a id="tweet" onclick="tweetQuote()" title = "Tweet Quote" ><img src = Twitter.png height= "20" ></a>
+      <a id="share" onclick="shareQuote()" title = "Share Quote" ><img src = Share.PNG height= "20" ></a>
+      <iframe id=FB src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FQuotatioapp&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="55" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
   </div>
       <!-- all javascript code will go within the below script tag -->
     <script type="text/javascript">
@@ -45,7 +63,7 @@ function generatequote () {
     .then(res => res.json())
     .then(data => setText(data))
     // this might cause an infinite loop if an error other than a quote specific syntax error occurs
-    .catch(err => generateQuote());
+    .catch(err => generatequote());
 };
 
 function generateRandomNumber() {
@@ -53,7 +71,7 @@ function generateRandomNumber() {
 };
 
 function setText(quote) {
-  document.getElementById("quote").innerHTML = quote.quoteText;
+  document.getElementById("quote").innerHTML = quote.quoteText.replace(';', ' ~');
   if (quote.quoteAuthor === '') {
     document.getElementById("author").innerHTML = 'Unknown author';
   } else {
@@ -61,6 +79,13 @@ function setText(quote) {
   }
 
 };
+function tweetQuote(quote) {
+  window.open(`https://twitter.com/intent/tweet/?text=${document.getElementById('quote').textContent} ${document.getElementById('author').textContent}&hashtags=quotatio`);
+}
+
+function shareQuote(quote) {
+window.open (`https://www.facebook.com/sharer/sharer.php?u=quotat.io&quote=${document.getElementById('quote').textContent} ${document.getElementById('author').textContent}`);
+}
 
 window.onload = generatequote;
 

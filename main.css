@@ -30,7 +30,7 @@ body {
 }
 
 button {
-  display: block;
+  display:block;
   margin: 0 auto;
   margin-top: 70px;
   background: #47b;
@@ -79,4 +79,10 @@ button:active {
 
 #share {
   cursor: pointer;
+}
+
+#spinner {
+  position:absolute;
+  display: block;
+  left:49%;
 }

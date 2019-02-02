@@ -10,6 +10,28 @@ body {
   padding: 0;
 }
 
+@media (orientation: landscape) {
+  #quoteContainer {
+  width: 62vw;
+  margin: 0 auto;
+  margin-top: 30px;
+  min-height: 225px;
+  }
+
+#quote {
+    font-size: 28px;
+    font-family: 'Caveat', cursive;
+
+  }
+
+#author {
+  font-family: 'Satisfy', cursive;
+  font-size: 32px;
+  font-weight: normal;
+  text-align: right;
+  }
+}
+
 #quoteContainer {
   width: 62vw;
   margin: 0 auto;
@@ -17,9 +39,26 @@ body {
   min-height: 225px;
 }
 
+@media (max-device-width: 500px) {
+  #quoteContainer {
+      width: 62vw;
+      margin: 0 auto;
+      margin-top: 30px;
+      min-height: 530px;
+  }
+}
+
+
 #quote {
   font-size: 28px;
   font-family: 'Caveat', cursive;
+}
+
+@media (max-device-width: 500px) {
+  #quote {
+    font-size: 42px;
+    font-family: 'Caveat', cursive;
+  }
 }
 
 #author {
@@ -27,6 +66,13 @@ body {
   font-size: 32px;
   font-weight: normal;
   text-align: right;
+}
+
+@media (max-device-width: 500px) {
+  #author {
+    font-size: 50px;
+    font-family: 'Caveat', cursive;
+  }
 }
 
 button {

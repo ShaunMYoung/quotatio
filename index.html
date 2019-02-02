@@ -23,6 +23,7 @@
     <meta name="msapplication-TileImage" content="./Favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <meta name="google-site-verification" content="eULqnje38St3pNd_ZSlMcpvnGKTu0FDYX2InVLxSQCs" />  
+    
   </head>
 
   <body>
@@ -41,7 +42,7 @@
     
     <button id="newQuoteButton" onclick = "generatequote()">Generate new quote</button>
 
-    <div id=SocialContainer>
+    <div id=SocialContainer  oncontextmenu="return false;">
       <a id="tweet" onclick="tweetQuote()" title = "Tweet Quote" ><img src = Twitter.png height= "20" ></a>
       <a id="share" onclick="shareQuote()" title = "Share Quote" ><img src = Share.PNG height= "20" ></a>
       <iframe id=FB src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FQuotatioapp&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="53" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>

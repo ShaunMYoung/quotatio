@@ -17,9 +17,25 @@ body {
   min-height: 225px;
 }
 
+@media (max-device-width: 500px) {
+  #quoteContainer {
+      width: 62vw;
+      margin: 0 auto;
+      margin-top: 30px;
+      min-height: 530px;
+  }
+}
+
 #quote {
   font-size: 28px;
   font-family: 'Caveat', cursive;
+}
+
+@media (max-device-width: 500px) {
+  #quote {
+    font-size: 42px;
+    font-family: 'Caveat', cursive;
+  }
 }
 
 #author {
@@ -29,8 +45,15 @@ body {
   text-align: right;
 }
 
+@media (max-device-width: 500px) {
+  #author {
+    font-size: 50px;
+    font-family: 'Caveat', cursive;
+  }
+}
+
 button {
-  display: block;
+  display:block;
   margin: 0 auto;
   margin-top: 70px;
   background: #47b;
@@ -79,4 +102,10 @@ button:active {
 
 #share {
   cursor: pointer;
+}
+
+#spinner {
+  position:absolute;
+  display: block;
+  left:49%;
 }
